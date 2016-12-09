@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="formulario">
+                Primeiro nome: <input type="text" data-bind="textInput: primeiroNome"/></br>
+                Último nome: <input type="text" data-bind="textInput: ultimoNome"/></br>
+                Cargo: <input type="text" data-bind="textInput: cargo"/></br>
+                Email: <input type="text" data-bind="textInput: email"/></br>
+                <button data-bind="click: salvarImagem">Salvar</button>
+            </div>
+            <div class="imagens">
+                <div id="divImagem1" class="image1">
+                    <div class="divNome">
+                        <label class="primeiroNome" data-bind="text: primeiroNome"></label>
+                        <label class="ultimoNome" data-bind="text: ultimoNome"></label>
+                    </div>
+                    
+                    <label class="cargo" data-bind="text: cargo"></label>
+                    <label class="email" data-bind="text: email"></label>
+                    <img src="Assinatura_v6.jpg"/>
+                </div>
+                <img src="minha_assinatura_lindosa.jpg"/>
+            </div>
+        </div>
+        <script src="jquery-3.1.1.min.js"></script>
+        <script src="knockout-3.4.1.js"></script>
+        <script src="html2canvas.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
