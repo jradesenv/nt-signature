@@ -1,19 +1,25 @@
 var ViewModel = function() {
-    this.primeiroNome = ko.observable("");
-    this.ultimoNome = ko.observable("");
-    this.cargo = ko.observable("");
-    this.email = ko.observable("");
+    var _view = this;
+    _view.primeiroNome = ko.observable("");
+    _view.ultimoNome = ko.observable("");
+    _view.cargo = ko.observable("");
+    _view.email = ko.observable("");
 
-    this.salvarImagem = function() {
-        html2canvas($('#divImagem1'), {
-            onrendered: function(canvas) {
-                var a = document.createElement('a');
-                a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-                a.download = 'minha_assinatura_lindosa.jpg';
-                a.click();
-            }
-        });
+    _view.abrirPopup = function() {
+        var OpenWindow=window.open("url", "newwin", "height=500, width=500,toolbar=no,scrollbars=yes,menubar=no");
+        OpenWindow.document.write($('#divImagem1').html());
     };
+
+    _view.pegarHtml = function() {
+        var _htmlPopup = 'Resultado: (copie e cole na assinatura html)</br><textarea id="txtResultado" rows="5" cols="50">' + $('#divImagem1').html() + '</textarea>';
+        var OpenWindow=window.open("url", "newwin", "height=500, width=500,toolbar=no,scrollbars=yes,menubar=no");
+        OpenWindow.document.write(_htmlPopup);
+    }
 };
  
 ko.applyBindings(new ViewModel());
+
+// var txtResultado = document.getElementById("txtResultado");
+// txtResultado.onfocus = function() {
+//     txtResultado.select();
+// };
