@@ -16,14 +16,16 @@ var ViewModel = function() {
     });
 
     _view.abrirPopup = function() {
-        var OpenWindow=window.open("url", "newwin", "height=500, width=500,toolbar=no,scrollbars=yes,menubar=no");
-        OpenWindow.document.write($('#divImagem1').html());
+        var OpenWindow = window.open("", "assinatura", "height=500, width=500,toolbar=no,scrollbars=yes,menubar=no");
+        OpenWindow.document.body.innerHTML = $('#divImagem1').html();
+        //OpenWindow.document.write($('#divImagem1').html());
     };
 
     _view.pegarHtml = function() {
         var _htmlPopup = 'Resultado: (copie e cole na assinatura html)</br><textarea id="txtResultado" rows="5" cols="50">' + $('#divImagem1').html() + '</textarea>';
-        var OpenWindow=window.open("url", "newwin", "height=500, width=500,toolbar=no,scrollbars=yes,menubar=no");
-        OpenWindow.document.write(_htmlPopup);
+        var OpenWindow=window.open("", "html", "height=500, width=500,toolbar=no,scrollbars=yes,menubar=no");
+        OpenWindow.document.body.innerHTML = _htmlPopup;
+        //OpenWindow.document.write(_htmlPopup);
     }
 };
 
